@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Sign Up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        /* CSS for Read Aloud Button */
+#readAloudBtn , #stopReadAloudBtn {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px; /* Add margin to the bottom to separate it from other elements */
+    transition: background-color 0.3s;
+  }
+
+#readAloudBtn, #stopReadAloudBtn:hover {
+    background-color: #45a049; /* Darker green background color on hover */
+  }
+  
+
+        .container {
+            max-width: 600px; /* Reduce the width of the container */
+            margin: 0 auto;
+            margin-top: 4%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label, input, select {
+            margin: 10px 0;
+        }
+
+        input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .login-link {
+            text-align: center; /* Center the "Already have an account?" link */
+        }
+
+        .navlinks{
+    padding-left: 17%;
+}
+
+.navlinks a.nav-link {
+    color: black; /* Set the default link color to black */
+    text-decoration: none;
+    transition: color 0.3s; /* Add a smooth color transition on hover */
+}
+
+.navlinks a.nav-link:hover {
+    color: #fc036b; /* Change the link color to #fc036b on hover */
+}
+
+    </style>
+</head>
+<body>
+
+      <!-- Navbar-->
+
+      <nav id="navbar" class="navbar" style="background-color: #f4f4f5;">
+        <!-- Navbar content -->
+
+        <div class="container-fluid">
+            <a href="../Index.html">
+                <img src="Images/TLogo.png" alt="LOGO" width="80" height="80">
+            </a>
+            <div class="navlinks">
+            <ul class="nav justify-content-right">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="hotelhtml.html">Hotels</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="ToursAndPackages.html">Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Index.html #about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contactus.html">Contact</a>
+                  </li>
+                
+              </ul>
+              </div>
+           
+          </div>
+      </nav>
+      <button id="readAloudBtn">Read Aloud</button>
+      <button id="stopReadAloudBtn">Stop Reading</button>
+      
+<div class="container">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+        <label for="name">First Name:</label>
+        <input type="text" id="name" name="name" required>
+        <div class="error" id="name-error"></div>
+        <label for="name">Last Name:</label>
+        <input type="text" id="Lastname" name="Lastname" required>
+        <div class="error" id="Lastname-error"></div>
+        <label for="validationCustomUsername" class="form-label">Username</label>
+        <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+        </div>
+        <label for="validationCustom04" class="form-label">State</label>
+        <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Choose Your State</option>
+            <option>Maharashtra</option>
+            <option>Karnataka</option>
+            <option>Jammu & Kashmir</option>
+            <option>Gujrat</option>
+            <option>Bengal</option>
+            <option>Haryana</option>
+            <option>Oddisa</option>
+            <option>Tamil Nadu</option>
+            <option>Kerla</option>
+            <option>Uttar Pradesh</option>
+        </select>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error" id="email-error"></div>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <div class="error" id="password-error"></div>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <div class="error" id="confirm-password-error"></div>
+
+        <button type="submit" class="btn">Sign Up</button>
+        <p class="login-link">Already have an account? <a href="login1.html">Login</a></p>
+    </form>
+</div>
+
+<script>
+
+    // Function to start reading the content aloud
+    function startReadingAloud() {
+      const content = document.body.textContent;
+      const utterance = new SpeechSynthesisUtterance(content);
+      speechSynthesis.speak(utterance);
+    }
+  
+    // Function to stop the text-to-speech
+    function stopReadingAloud() {
+      speechSynthesis.cancel();
+    }
+  
+    // Event listeners for the buttons
+    document.getElementById("readAloudBtn").addEventListener("click", startReadingAloud);
+    document.getElementById("stopReadAloudBtn").addEventListener("click", stopReadingAloud);
+    const signupForm = document.getElementById("signup-form");
+    signupForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        validateForm();
+    });
+
+    function validateForm() {
+        const name = document.getElementById("name").value;
+        const Lastname = document.getElementById("Lastname").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+
+        const nameError = document.getElementById("name-error");
+        const LastnameError = document.getElementById("Lastname-error");
+        const emailError = document.getElementById("email-error");
+        const passwordError = document.getElementById("password-error");
+        const confirmPasswordError = document.getElementById("confirm-password-error");
+
+        nameError.textContent = "";
+        LastnameError.textContent = "";
+        emailError.textContent = "";
+        passwordError.textContent = "";
+        confirmPasswordError.textContent = "";
+
+        if (name.length < 3) {
+            nameError.textContent = "First Name must be at least 3 characters long.";
+            return;
+        }
+        if (Lastname.length < 3) {
+            LastnameError.textContent = "Last Name must be at least 3 characters long.";
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            emailError.textContent = "Invalid email address.";
+            return;
+        }
+
+        if (password.length < 8) {
+            passwordError.textContent = "Password must be at least 8 characters long.";
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            confirmPasswordError.textContent = "Passwords do not match.";
+            return;
+        }
+
+        // If all validation passes, you can submit the form to the server here.
+        // For this example, we'll just alert a success message.
+        alert("Sign up successful!");
+    }
+
+    function validateEmail(email) {
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return emailPattern.test(email);
+    }
+</script>
+</body>
+</html>
+
+</body>
+</html>

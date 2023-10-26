@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>FAQ</title>
+        <link rel="stylesheet" href="CSS/faq.css">
+    </head>
+    <body>
+        <div class="container">
+            <button id="readAloudBtn">Read Aloud</button>
+            <button id="stopReadAloudBtn">Stop Reading</button>
+            <h1>Frequently asked questions? </h1>
+            <div class="tab">
+                <input type="radio" name="acc" id="acc1">
+                <label for="acc1">
+                    <h2>01</h2>
+                    <h3>WHY SHOULD I USE A TRAVEL AGENT TO BOOK A VACATION?</h3>
+                </label>
+                <div class="content">
+                    <p>A travel agent takes all of the headache out of planning 
+                        a trip and handles virtually all aspects of your travel, 
+                        at absolutely no cost to you. The combined experience of 
+                        the team and the feedback from our thousands of travelers 
+                        provides an invaluable resource to the traveler planning 
+                        an important trip.In recent years, the top travel vendors 
+                        have empowered and trained the agency community to be 
+                        even more effective and efficient go-betweens. Read more 
+                        about working with a travel agent.</p>
+                </div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="acc" id="acc2">
+                <label for="acc2">
+                    <h2>02</h2>
+                    <h3>CAN YOU WORK WITHIN A CERTAIN BUDGET?</h3>
+                </label>
+                <div class="content">
+                    <p>Yes, we work within any and all realistic budgets, and an 
+                        honest sharing of ideas and goals helps us immensely when
+                         making recommendations and suggested edits to travel plans.
+                    </p></div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="acc" id="acc3">
+                <label for="acc3">
+                    <h2>03</h2>
+                    <h3>HOW DO I CANCEL A TRIP?</h3>
+                </label>
+                <div class="content">
+                    <p>Call us right away. If it’s after normal business hours, 
+                        please contact the next involved travel supplier
+                         (airline, hotel, tour operator, cruise line) to cancel
+                          any reservations you will not be able to use. If you
+                           purchased travel insurance, please contact the 
+                           insurance company’s 24-hour line to start the 
+                           cancellation process and ensure your maximum refund.
+                    </p></div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="acc" id="acc4">
+                <label for="acc4">
+                    <h2>04</h2>
+                    <h3>How Should I Travel Around in India ?</h3>
+                </label>
+                <div class="content">
+                    <p>
+                        The best way to travel within India is to travel by road 
+                        as this offers you an opportunity to have a glimpse of 
+                        real INDIA as you can visit en-route villages and small 
+                        forts at your own pace which is not possible by air or 
+                        by train. But, if you are travelling to long distance, 
+                        then taking a flight or trains can be more convenient 
+                        and to save time.
+                    </p></div>
+            </div>
+
+            <div class="tab">
+                <input type="radio" name="acc" id="acc5">
+                <label for="acc5">
+                    <h2>05</h2>
+                    <h3>Are taxes and booking fees included in the prices that you show?</h3>
+                </label>
+                <div class="content">
+                    <p>Yes, all prices shown include taxes and fees.
+                    </p></div>
+            </div>
+
+        </div>
+
+        <script>
+            // Function to start reading the content aloud
+            function startReadingAloud() {
+              const content = document.body.textContent;
+              const utterance = new SpeechSynthesisUtterance(content);
+              speechSynthesis.speak(utterance);
+            }
+          
+            // Function to stop the text-to-speech
+            function stopReadingAloud() {
+              speechSynthesis.cancel();
+            }
+          
+            // Event listeners for the buttons
+            document.getElementById("readAloudBtn").addEventListener("click", startReadingAloud);
+            document.getElementById("stopReadAloudBtn").addEventListener("click", stopReadingAloud);
+          </script>
+    </body>
+    </html>

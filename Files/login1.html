@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 60px auto; /* Remove the extra space and center the container */
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label,
+    input {
+      margin: 10px 0;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .btn {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .signup-link {
+      text-align: center;
+    }
+
+    .navlinks {
+      padding-left: 17%;
+    }
+
+    .navlinks a.nav-link {
+      color: black;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navlinks a.nav-link:hover {
+      color: #fc036b;
+    }
+
+    /* CSS for Read Aloud Button */
+    #readAloudBtn,
+    #stopReadAloudBtn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 20px;
+      transition: background-color 0.3s;
+    }
+
+    #readAloudBtn,
+    #stopReadAloudBtn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar" style="background-color: #f4f4f5;">
+    <!-- Navbar content -->
+    <div class="container-fluid">
+      <a href="../Index.html">
+        <img src="Images/TLogo.png" alt="LOGO" width="80" height="80">
+      </a>
+      <div class="navlinks">
+        <ul class="nav justify-content-right">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hotelhtml.html">Hotels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ToursAndPackages.html">Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Index.html #about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactus.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <button id="readAloudBtn">Read Aloud</button>
+  <button id="stopReadAloudBtn">Stop Reading</button>
+
+  <div class="container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <div class="error" id="email-error"></div>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <div class="error" id="password-error"></div>
+
+      <button type="submit" class="btn" id="login-button">Log In</button>
+    </form>
+    <p class="signup-link">Don't have an account? <a href="register.html">Sign Up</a></p>
+  </div>
+
+  <script>
+    // Function to start reading the content aloud
+    function startReadingAloud() {
+      const content = document.body.textContent;
+      const utterance = new SpeechSynthesisUtterance(content);
+      speechSynthesis.speak(utterance);
+    }
+
+    // Function to stop the text-to-speech
+    function stopReadingAloud() {
+      speechSynthesis.cancel();
+    }
+
+    // Event listeners for the buttons
+    document.getElementById("readAloudBtn").addEventListener("click", startReadingAloud);
+    document.getElementById("stopReadAloudBtn").addEventListener("click", stopReadingAloud);
+
+    const loginForm = document.getElementById("login-form");
+    const loginButton = document.getElementById("login-button");
+
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      validateForm();
+    });
+
+    function validateForm() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      const emailError = document.getElementById("email-error");
+      const passwordError = document.getElementById("password-error");
+
+      emailError.textContent = "";
+      passwordError.textContent = "";
+
+      if (!validateEmail(email)) {
+        emailError.textContent = "Invalid email address.";
+        return;
+      }
+
+      if (password.length < 8) {
+        passwordError.textContent = "Password must be at least 8 characters long.";
+        return;
+      }
+
+      // If all validation passes, you can submit the form to the server here.
+      window.location.href = "../Index.html";
+
+    }
+
+    function validateEmail(email) {
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      return emailPattern.test(email);
+    }
+  </script>
+</body>
+
+</html>

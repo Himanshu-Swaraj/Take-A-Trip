@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Terms and conditions</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('Nishvita/bgimage.jpg');
+}
+.bg{
+    background: url(elcarito-MHNjEBeLTgw-unsplash.jpg);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+    opacity: 0.7;
+    filter: brightness(75%);
+}
+.terms-box{
+    max-width: 460px;
+    background-color: rgb(83, 83, 83,0.1);
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0 20px;
+    height: 400px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+.terms-text{
+    padding: 0 20px;
+    height: 400px;
+    overflow-y: auto;
+    font-size: 14;
+    font-weight: 500;
+    color: #111;
+}
+.terms-text::-webkit-scrollbar{
+    width: 2px;
+    background-color: #282828;
+}
+.terms-text::-webkit-scrollbar-thumb{
+    background-color: #f1f1f1;
+}
+.terms-text h2{
+    text-transform: uppercase;
+}
+.terms-text h4{
+    font-size: 13px;
+    text-align: center;
+    padding: 0 40px;
+}
+.terms-box h4 span{
+    color: rgb(245, 68, 68);
+    text-transform: uppercase;
+}
+.buttons{
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+.btn{
+    height: 50px;
+    width: calc(50% - 6px);
+    border: 0;
+    border-radius: 6px;
+    font-size: 19px;
+    font-weight: 500;
+    color: #fff;
+    transition: .3s linear;
+    cursor: pointer;
+}
+.red-btn{
+    background-color: rgb(245, 68, 68);
+}
+.gray-btn{
+    background-color: #282828;
+}
+.btn:hover{
+    opacity: .6;
+}
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="terms-box">
+        <div class="terms-text">
+            <h2>Terms And Conditions</h2>
+            <p>Last Edit:1/12/2022</p>
+            <p>Greetings User</p>
+            <p>The Booking:</p>
+            <p>Your contract is with Pioneer Journeys Pvt. Ltd. A contract exists between 
+                us when we have confirmed you on our tour of your choice and we have received 
+                your signed booking form and deposits. All the relevant section must be 
+                correctly and fully completed. We can only accept booking form signed as this 
+                confirms that you and other people on the tour accept our booking terms and condition 
+                and are entering into the contract.</p>
+
+            <p>Payments:</p>
+            <p>For the services contracted, 50% advance payment should be made to hold the booking on a 
+                confirmed basis and the balance amount can be paid at least 7 days prior to your date of 
+                departure from your country. We hold the right to decide upon the amount to be paid as an 
+                advance payment, based on the nature of services and the time left for the commencement of 
+                the services. Apart from the above in some cases like special train journeys, hotel or resort
+                 bookings during the peak season (X-Mas, New Year) full payment is required to be sent in advance</p>
+
+            <p>Cancellation and Refund Policy:</p>
+                <p>All cancellations must be made in writing to us at least a month prior to the date of arrival of the client.
+                     We levy the following cancellation charges.</p>
+                
+                <p>» 10% of the total amount if the booking is cancelled 30 days prior
+                » 25% of the total amount if the booking is cancelled 15 days prior
+                » 50% of the total amount if the booking is cancelled 07 days prior
+                » 100% cancellation in case of no show</p>
+
+            <p>Complaints:</p>
+            <p>We do our best to give passengers travelling on any of our holidays, an enjoyable and trouble free vacation
+                 but occasionally plans go wrong. Should you have any complaint, please inform your tour manager 
+                 (at the same time), who will do everything possible to resolve the matter immediately. If the situation 
+                 is not resolved to your satisfaction, then you must notify the company within 28 days of the tour ending 
+                 in writing. If you do not write to us within this time, this will affect the investigation and outcome of 
+                 the complaint. Any disputes between clients and Pioneer Journeys Pvt. Ltd. Shall be governed by Jurisdiction on India.</p>
+
+            <p>Early Check-in / Late Check -out:</p>
+            <p>Please note that standard check-in / Checkout time in most hotels is 1200 Hrs. (IST). Therefore cost of early 
+                check-in or Late check-out is not included in the tour cost. We can always make a request for early check-in 
+                or late checkout if required but we do not guarantee that, that entirely depend upon the policy of the hotel, 
+                time of the year and availability of the room.</p>
+       
+       <h4>I Agree To The <span> Terms And Conditions</span> And I Read The Privacy Notice</h4>
+       <div class="buttons">
+           <!-- <button class="btn red-btn">Accept</button> -->
+           <button class="btn red-btn" id="acceptBtn">Accept</button>
+           <button class="btn gray-btn" id="rejectBtn">Decline</button>
+       </div>
+
+            </div>
+    </div>
+    <script>
+        document.getElementById("acceptBtn").addEventListener("click", function() {
+            // Perform any actions you need here, such as redirecting to another page.
+            // For example, to redirect to a page named "welcome.html":
+            window.location.href = "cond.html";
+        });
+
+        document.getElementById("rejectBtn").addEventListener("click", function() {
+            // Perform any actions you need here, such as redirecting to another page.
+            // For example, to redirect to a page named "welcome.html":
+            window.location.href = "cond.html";
+        });
+    </script>
+    
+</body>
+
+</html>

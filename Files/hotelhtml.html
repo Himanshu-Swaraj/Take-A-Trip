@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="CSS/hotelstyles.css" />
+
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+  crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <title>HOTEL AND ACCOMIDATION FORM </title>
+
+</head>
+
+
+<body>
+  <!-- Navbar-->
+
+    <!-- Bootstrap Navigation Bar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="../Index.html">
+              <img src="assets/TLogo.png" alt="LOGO" width="80" height="80">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="../Index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="gallery.html">Gallery</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="ToursAndPackages.html">Packages</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../Index.html #about">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="contactus.html">Contact</a>
+                  </li>
+              </ul>
+              <form class="d-flex mx-2">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+      </div>
+    </nav>
+
+  <header class="section__container header__container">
+    <div class="header__image__container">
+      <div class="header__content">
+        <h1>Enjoy Your Dream Vacation</h1>
+      </div>
+      <div class="booking__container">
+        <form id="reservation-form">
+          <div class="form__group">
+            <div class="input__group">
+              <input type="text" id="location" required class="form-control">
+              <label for="location"><b>Location</b></label>
+            </div>
+            <p>Where are you going?</p>
+          </div>
+          <div class="form__group">
+            <div class="input__group">
+              <input type="date" id="check-in" required class="form-control">
+              <label for="check-in"><b>Check In</b></label>
+            </div>
+            <p>Add date</p>
+          </div>
+          <div class="form__group">
+            <div class="input__group">
+              <input type="date" id="check-out" required class="form-control">
+              <label for="check-out"><b>Check Out</b></label>
+            </div>
+            <p>Add date</p>
+          </div>
+          <div class="form__group">
+            <div class="input__group">
+              <input type="number" required class="form-control">
+              <label><b>Guests</b></label>
+            </div>
+            <p>Add guests</p>
+          </div>
+          <div class="form__group">
+            <div class="input__group">
+              <input type="number" required class="form-control">
+              <label><b>ROOMS</b></label>
+            </div>
+            <p>NUMBER OF ROOMS</p>
+          </div>
+          <input type="submit" value="Check Availability" class="btn btn-primary">
+          <!-- Modal Dialog -->
+
+        </form>
+
+      </div>
+    </div>
+  </header>
+  <div class="modal" id="loading-modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p class="text-center">Searching for best hotels...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="section__container">
+    <div class="reward__container">
+      <p>100+ discount codes</p>
+      <h4>Join rewards and discover amazing discounts on your booking</h4>
+      <button class="reward__btn">Join Rewards</button>
+    </div>
+  </section>
+  <!-- Page Up Button -->
+<button id="pageUpBtn" class="page-up-btn">&#9650; Top</button>
+<button id="readAloudBtn">Read Aloud</button>
+<button id="stopReadAloudBtn">Stop Reading</button>
+
+
+  <!-- Footer -->
+
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+        <h3>Take<span> A</span> Trip</h3>
+
+        <p class="footer-links">
+            <a href="../Index.html">Home</a>
+            |
+            <a href="../Index.html #about">About</a>
+            |
+            <a href="contactus.html">Contact</a>
+            |
+            <a href="ToursAndPackages.html">Packages</a>
+            |
+            <a href="gallery.html">Gallery</a>
+        </p>
+
+        <p class="footer-company-name">Copyright © 2023 <strong>TakeATrip</strong> All rights reserved</p>
+       
+    </div>
+
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Manipal</span>
+                Karnataka</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+91 9806754231</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="">takeatrip@gmail.com</a></p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>About the company</span>
+            <strong>Take A Trip (TAT)</strong> is the flagship digital consumer brand
+            within the Indian Travel Media portfolio.
+        </p>
+        <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+    </div>
+</footer>
+
+    <script src="Javascript/hotelscript.js"></script>
+</body>
+
+</html>
